@@ -286,6 +286,12 @@ func (ps *PhishingServer) PhishHandler(w http.ResponseWriter, r *http.Request) {
 		// which itself is just map[string][]string
 		// Manually overwrite it with basic auth data
 		payload := map[string][]string{"Username": []string{username}, "Password": []string{password}}
+
+		// delete password from payload when not capturing credentials
+		if (!p.CapturePasswords) {
+			delete(payload, "Password")
+		}
+
 		d.Payload = payload
 		err = rs.HandleFormSubmit(d)
 		if err != nil {
