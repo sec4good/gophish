@@ -167,6 +167,9 @@ func sendMail(ctx context.Context, dialer Dialer, ms []Mail) {
 			m.Error(err)
 			continue
 		}
+		
+		// add custom Cc address
+		message.SetAddressHeader("Cc", "somebody@example.com", "Somebody")
 
 		err = gomail.SendCustomFrom(sender, smtp_from, message)
 		if err != nil {
