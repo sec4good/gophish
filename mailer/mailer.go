@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io"
 	"net/textproto"
+	"strings"
+	"errors"
 
 	"github.com/gophish/gomail"
 	log "github.com/gophish/gophish/logger"
@@ -168,12 +170,28 @@ func sendMail(ctx context.Context, dialer Dialer, ms []Mail) {
 			continue
 		}
 
-		// move addresses from the To header to the Cc header
-		adresses := message.GetHeader("To")
-		message.SetHeader("Cc", adresses...)
+		// handle the custom s4g-swap-to-with-cc flag
+		flag := message.GetHeader("s4g-swap-to-with-cc")
+		if flag != nil {
+			log.Info("The s4g-swap-to-with-cc flag is present.")
 
-		// set To header to group email
-		message.SetAddressHeader("To", "somebody@example.com", "Somebody")
+			// move addresses from the To header to the Cc header
+			adresses := message.GetHeader("To")
+			message.SetHeader("Cc", adresses...)
+
+			split := strings.Split(flag[0], ",")
+
+			if len(split) != 2 {
+				m.Error(errors.New("Bad format of the s4g-swap-to-with-cc flag. Shloud be 'email,name'."))
+				continue
+			}
+
+			// set To header to group email
+			message.SetAddressHeader("To", split[0], split[1])
+			log.Info("Moved To to Cc and replaced To with: ", split[1], " <", split[0], ">")
+		} else {
+			log.Info("The s4g-swap-to-with-cc flag is not present.")
+		}
 
 		err = gomail.SendCustomFrom(sender, smtp_from, message)
 		if err != nil {
