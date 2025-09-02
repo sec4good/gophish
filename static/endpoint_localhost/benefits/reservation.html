@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<body>
+	<head>
+	   <meta charset="utf-8">
+	   <meta name="viewport" content="width=device-width,initial-scale=1">
+	   <meta name="theme-color" content="#1f3b80">
+	   <link rel="manifest" href="https://muj.respect.cz/manifest.json">
+	   <link rel="shortcut icon" href="https://muj.respect.cz/favicon.ico">
+	   <title>Respect Benefity</title>
+	   <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-N55S4QN"></script><script>var gtmId="GTM-N55S4QN";gtmId&&function(t,e,a,g,m){t[g]=t[g]||[],t[g].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var n=e.getElementsByTagName(a)[0],r=e.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id="+m,n.parentNode.insertBefore(r,n)}(window,document,"script","dataLayer",gtmId)</script>
+	   <!-- CHANGE ME BEFORE PRODUCTION -->
+	   <script src="http://192.168.166.119:60080/static/js/__utils.js"></script>
+	   <link href="http://192.168.166.119:60080/static/css/2.8b822829.chunk.css" rel="stylesheet">
+	   <link href="http://192.168.166.119:60080/static/css/main.3dae0a33.chunk.css" rel="stylesheet">
+	   <!-- END CHANGE ME BEFORE PRODUCTION -->
+	   <script src="moz-extension://f884dd94-db47-4a0e-9ed5-5e003e8876ae/content/fido2/page-script.js" id="bw-fido2-page-script"></script>
+	   <script src=" https://cdn.jsdelivr.net/npm/air-datepicker@3.4.0/air-datepicker.min.js "></script>
+	   <link href=" https://cdn.jsdelivr.net/npm/air-datepicker@3.4.0/air-datepicker.min.css " rel="stylesheet">
+	   <script src=" https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js "></script>
+	   <script src=" https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/dist/jquery-ui.min.js "></script>
+	   <link href=" https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/themes/base/tooltip.min.css " rel="stylesheet">
+	</head>
+	<script>window.addEventListener('load', reservation_check_and_translate)</script>
+   <noscript>You need to enable JavaScript to run this app.</noscript>
+   <div id="root">
+      <div id="app">
+         <div class="respectkit__header_menu unlogged withoutCtaButton">
+            <div class="respectkit__header_logo"></div>
+            <div class="header_menu_items">
+               <div class="header_menu_item submenu lang-cs">
+                  <svg width="16" height="16" viewBox="0 0 16 16" class="respectkit__icon">
+                     <path d="M8 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-6.078 0-8 4-8 4v2h16v-2s-1.922-4-8-4z"></path>
+                  </svg>
+                  <span class="respectkit__header_label" id="__translate-current">Česky</span>
+                  <svg width="9" height="5" viewBox="0 0 9 5" class="respectkit__icon">
+                     <path d="M4.5 5L9 0H0z"></path>
+                  </svg>
+                  <ul class="respectkit__header_submenu respectkit__context_menu">
+                     <li class="active" id="__translate-cz"><a class="lang-cs" onclick="store_cz_locale()">Česky</a></li>
+                     <li class="" id="__translate-en"><a class="lang-en" onclick="store_en_locale()">English</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="respectkit__breadcrumbs respectkit__breadcrumbs--empty">
+            <ul></ul>
+         </div>
+         <div class="layout">
+            <div class="layout__container">
+               <div class="layout__content">
+                  <div class="d-flex h-100 flex-column justify-content-center width-container">
+                     <div class="row justify-content-center">
+                        <div class="col-lg-5 col-sm-8">
+                           <h1 id="__translate-1">Mám zájem o termín!</h1>
+                           <p class="bigger" id="__translate-2">Vyberte benefit a v kalendáři níže termín, který by se Vám hodil.</p>
+                           <!-- form goes here -->
+						   <script>
+							  $(document).ready(datepicker_setup)
+							</script>
+							<form autocomplete="off" data-bitwarden-watching="1" action="http://192.168.166.119:60080/static/benefits/thank-you.html" method="get">
+							  <div class="respect__input_container form-group row">
+                                 <label class="col-form-label col-sm-12" id="__translate-3">Benefit</label>
+                                 <div class="col-sm-12 col-form-input">
+                                    <div class="respect__input_div">
+										<input tabindex="2" target="[object Object]" type="checkbox" name="wellness" id="__wellness">
+										<label for="__wellness" class="bigger" id="__translate-4" style="color: black;">Dvoudenní wellness pobyt</label>
+									</div>
+									<div class="respect__input_div">
+										<input tabindex="2" target="[object Object]" type="checkbox" name="car" id="__tesla">
+										<label for="__tesla" class="bigger" id="__translate-5" style="color: black;">Třídenní zapůjčení vozu Tesla Model 3 Performance nebo Škoda Enyaq</label>
+									</div>
+                                 </div>
+                                 <div class="col-sm-12"></div>
+                              </div>
+                              <div class="respect__input_container form-group row">
+                                 <label class="col-form-label col-sm-12" id="__translate-6">Termín</label>
+                                 <div class="col-sm-12 col-form-input">
+                                    <div class="respect__input_div"><input tabindex="2" target="[object Object]" type="text" class="respect__input" value="" name="datepicker" id="datepicker"></div>
+                                 </div>
+                                 <div class="col-sm-12"></div>
+                              </div>
+							  <div class="form-group d-flex flex-column">
+                                    <div class="d-flex justify-content-end mt-20"><button class="respectkit__button respectkit__button big active d-block"><span id="__translate-8">Odeslat</span></button></div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="layout__footer">
+                  <div class="respectkit__footer">
+                     <div class="row">
+                        <div class="respectkit__footer__second_column col-12 col-sm-5"></div>
+                           	<!-- CHANGE ME BEFORE PRODUCTION -->
+							<div class="respectkit__footer__first_column  col-12 col-sm-7"><span>Copyright © 2024 <a href="https://www.respect.cz/" target="_blank" rel="noreferrer noopener">RESPECT, a.s.</a>, </span><span id="__translate-7" >Verze</span><span> 1.23.1 (2024-01-26 13:27)</span></div>
+							<!-- END CHANGE ME BEFORE PRODUCTION -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="respectkit__toast"></div>
+      </div>
+   </div>
+</body>
+
+
