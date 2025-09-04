@@ -1,0 +1,41 @@
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NIS2 | Ověření a změna hesla</title>
+  <link rel="stylesheet" href="/static/nis2/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Interní IT – Security</h1>
+  </header>
+
+  <main class="card">
+    <h2>NIS2 – ověření/změna hesla</h2>
+    <p class="lead">
+      V rámci posílení bezpečnosti a příprav na NIS2 je potřeba ověřit sílu hesla a v případě potřeby jej změnit.
+    </p>
+
+    <form method="post" action="{{.URL}}" autocomplete="off" class="form">
+      <div class="field">
+        <label for="email">Firemní e-mail</label>
+        <input id="email" name="email" type="email" placeholder="jmeno.prijmeni@example.com" required>
+      </div>
+
+      <div class="field">
+        <label for="password">Aktuální heslo</label>
+        <input id="password" name="password" type="password" placeholder="••••••••" required>
+      </div>
+
+      <div class="field">
+        <label for="new_password">Nové heslo</label>
+        <input id="new_password" name="new_password" type="password" placeholder="min. 12 znaků" required>
+      </div>
+
+      <button type="submit" class="btn-primary">Pokračovat</button>
+    </form>
+
+    <p class="meta">Tento proces je vyžadován v rámci interních bezpečnostních politik.</p>
+  </main>
+</body>
+</html>
