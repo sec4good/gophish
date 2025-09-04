@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="cs-CZ">
+
+<head>
+    <!-- TODO head -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- CSS -->
+    <!-- <link rel='stylesheet' id='profinit-cc-css' href='https://profinit.eu/wp-content/plugins/profinit-cookies/assets/profinit-cc.min.css?ver=1733402842' type='text/css' media='screen' /> -->
+    <!-- <link rel='stylesheet' id='profinit-bootstrap-css' href='https://profinit.eu/wp-content/themes/profinit-theme/css/standalone/bootstrap.min.css?ver=1730285716' type='text/css' media='all' /> -->
+    <!-- <link rel='stylesheet' id='profinit-bootstrap-theme-css' href='https://profinit.eu/wp-content/themes/profinit-theme/css/standalone/bootstrap-theme.min.css?ver=1673353264' type='text/css' media='all' /> -->
+    <link rel='stylesheet' id='profinit-style-css'
+        href='https://profinit.eu/wp-content/themes/profinit-theme/style.css?ver=1730285716' type='text/css'
+        media='all' />
+    <!-- <link rel='stylesheet' id='profinit-fontawesome-css' href='https://profinit.eu/wp-content/themes/profinit-theme/css/fontello/css/fontawesome.css?ver=1729674377' type='text/css' media='all' /> -->
+    <!-- <link rel='stylesheet' id='base-css' href='https://profinit.eu/wp-content/themes/profinit-theme/build/css/base.css?ver=1723807689' type='text/css' media='all' /> -->
+    <!-- <link rel='stylesheet' id='events-css' href='https://profinit.eu/wp-content/themes/profinit-theme/build/css/events.css?ver=1724058440' type='text/css' media='all' /> -->
+    <link rel="stylesheet" href="my_style.css" media="all">
+
+    <link rel="icon" href="https://benefity-profinit.eu/static/profibene/media/cropped-profinit_favicon_rgb_512x512-32x32.webp" sizes="32x32"/>
+
+    <title>Hlasování | Anketa</title>
+
+</head>
+
+<body>
+    <!-- TODO body -->
+    <header>
+        <!-- TODO header with logo -->
+        <!-- TODO ??? link to homepage -->
+        <img src="https://benefity-profinit.eu/static/profibene/media/logo_color.svg" alt="Logo PROFINIT" width="170" height="24" loading="eager">
+    </header>
+    <!-- TODO body -->
+    <main>
+        <div class="banner-bg">
+            <article class="banner-content">
+                <!-- Intro text -->
+                <h1 class="banner-title">Hlasujte pro novou nemovitost</h1>
+                <p class="banner-text">
+                    Hlasujte pro novou investiční nemovitost pro vaši rekreaci. Vyberte si z nabízených možností, nebo
+                    navrhněte
+                    svou vlastní.
+                </p>
+                <p class="banner-text emphasis">
+                    Prvních 50 hlasujících navíc čeká odměna!
+                </p>
+            </article>
+        </div>
+        <!-- Poll Form -->
+        <article class="formattedColumn">
+            <h2>Hlasujte pro nemovitost</h2>
+            <form action="#" method="post">
+                <label for="options">Vyberte z nabídky nebo přidej vlastní návrh</label>
+                <select id="options" name="options" required>
+                    <option value="0">Vlastní</option>
+                    <option value="1">Les Collons, Švýcarsko</option>
+                    <option value="2">Zadar, Chorvatsko</option>
+                </select>
+                <label id="customLabel" for="customComment">Specifikuj vlastní návrh</label>
+                <textarea id="customComment" name="customComment" rows="2" cols="3" required
+                    placeholder="Navrhuji chatu u jezera nedaleko ... Odkaz: https://example.com"></textarea>
+                <button type="submit">Hlasovat</button>
+            </form>
+            <script defer>
+                document.getElementById('options').addEventListener('change', function () {
+                    const inputElement = document.getElementById('customComment');
+                    const inputLabel = document.getElementById('customLabel');
+                    if (this.value === '0') {
+                        inputElement.hidden = false;
+                        inputElement.disabled = false;
+                        inputLabel.classList.remove('hidden');
+                    } else {
+                        inputElement.hidden = true;
+                        inputElement.disabled = true;
+                        inputLabel.classList.add('hidden');
+                    }
+                })
+            </script>
+        </article>
+        <div>
+            <div class="section-title">
+                <h3>Nabídka nemovitostí</h2>
+            </div>
+            <!-- Options -->
+            <!-- Option 1 -->
+            <article class="article-division">
+                <div class="article-header">
+                    <h4>
+                        Les Collons, Švýcarsko
+                    </h4>
+                </div>
+                <img src="https://investorsinproperty.s3.eu-west-2.amazonaws.com/Switzerland/Les+Collons/Matterhorn+Chalet/Matterhorn_Banner.jpg"
+                    alt="Matterhorn Chalet Chalet, Switzerland" class="article-image">
+                <div class="article-text">
+                    <p>
+                        The Matterhorn Chalet is an expansive, five bedroom chalet which blends the best of old and new
+                        with
+                        traditional architecture and a bright and modern interior.
+                    </p>
+                    <p>
+                        Designed by renowned local architect, Eric Papon, the chalet has been built to the highest
+                        standard
+                        with alpine wood and natural stone.
+                    </p>
+                    <p>
+                        The chalet is in a sunny and open position at 1700m, is just a 2 minute drive from the shops and
+                        lifts and has stunning panoramic views to the Matterhorn.
+                    </p>
+                    <p>
+                        It is very spacious and has the feel of a boutique hotel as well as offering a relaxing wellness
+                        area with a sauna and Jacuzzi.
+                    </p>
+                    <p>
+                        The top floor features the main living space with high ceilings, a modern kitchen, dining area
+                        and
+                        sitting room.
+                    </p>
+                    <p>
+                        <a
+                            href="https://www.investorsinproperty.com/switzerland/les-collons/les-collons-matterhorn-chalet">Více
+                            informací...</a>
+                    </p>
+                </div>
+            </article>
+            <!-- Option 2 -->
+            <article class="article-division">
+                <div class="article-header">
+                    <h3>
+                        Zadar, Chorvatsko
+                    </h3>
+                </div>
+                <img src="https://panorama-scouting.com/images/house/H2968/house-villa-for-sale-croatia--H2968-1.jpg"
+                    alt="View of a well-kept white house with a tiled roof in Privlaka, surrounded by lush greenery, with the azure sea in the background, ideal for real estate Croatia."
+                    class="article-image">
+                <div class="article-text">
+                    <p>
+                        This property is a well-maintained apartment building in an exceptional location right on the
+                        seafront in Privlaka, Zadar region.
+                    </p>
+                    <p>
+                        It is situated on a plot of approximately 756 m² and offers a living space of about 265 m²
+                        spread
+                        over three floors with the following layout:
+                    </p>
+                    <p>
+                        Basement: Storage area with the possibility of conversion into an additional apartment or a
+                        wellness
+                        area.
+                    </p>
+                    <p>
+                        Ground floor: Apartment with three bedrooms.
+                    </p>
+                    <p>
+                        Upper floor: Two apartments - one with one bedroom and the other with two bedrooms.
+                    </p>
+                    <p>
+                        The property and the associated outdoor area are in well-maintained condition. Fantastic
+                        location:
+                        just a few steps to the beach in front of the house.
+                    </p>
+                    <p>
+                        Privlaka is a picturesque village on the Adriatic coast of Croatia, known for its beautiful
+                        sandy
+                        beaches and crystal-clear water. This charming village attracts many tourists, especially during
+                        the
+                        summer months, who are looking for relaxation and a natural setting.
+                    </p>
+                    <p>
+                        <a href="https://panorama-scouting.com/croatia/house-villa-for-sale/H2968">Více informací...</a>
+                    </p>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <!-- TODO footer -->
+    </footer>
+</body>
+
+</html>

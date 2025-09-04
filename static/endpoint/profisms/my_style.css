@@ -1,0 +1,338 @@
+:root {
+    --content-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    --ms-color: #0067b8;
+    --content-box-width: 352px;
+    --profinit-color: #E63C41;
+    --white-text: #fff;
+}
+
+@viewport {
+    width: device-width;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes show-from-right {
+    from {
+        left: 200px;
+        opacity: 0
+    }
+
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: normal;
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+body {
+    font-size: 0.9em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--ms-color);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #666;
+}
+
+.animateEntrance {
+    position: relative;
+    animation-name: show-from-right;
+    animation-duration: .25s;
+    animation-timing-function: ease-in;
+    animation-timing-function: cubic-bezier(.5, 0, .5, 1);
+    animation-fill-mode: both;
+    transition-property: left;
+}
+
+.animateFadeIn {
+    animation: fadeIn .3s ease-in;
+}
+
+#branding {
+    height: 100%;
+    width: 100%;
+}
+
+.brandMS {
+    background-image: url("media/microsoft_background.svg");
+    background-position: center;
+}
+
+.brandPro {
+    background: linear-gradient(121deg, #e63c41 0, #b5579d 30%, #2b436c 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+button {
+    border: none;
+}
+
+.button {
+    color: #fff;
+    border-color: var(--ms-color);
+    background-color: var(--ms-color);
+    display: inline-block;
+    width: 108px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.button:focus {
+    background-color: #005da6;
+    text-decoration: underline;
+    outline: 2px solid #000;
+}
+
+.button:active {
+    outline: none;
+    text-decoration: none;
+    transform: scale(.98);
+}
+
+.button:hover {
+    background: rgb(0, 85, 152);
+    border: 1px solid rgb(0, 85, 152);
+}
+
+.buttonPro {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 108px;
+    height: 32px;
+    font-weight: 500;
+    line-height: 1.125;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white-text);
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: 1px solid var(--profinit-color);
+    background: var(--profinit-color);
+    cursor: pointer;
+    transition-property: background-color, border-color, color;
+    transition-duration: .2s;
+}
+
+.buttonPro:hover {
+    color: var(--profinit-color);
+    background-color: var(--white-text);
+    border-color: var(--profinit-color);
+}
+
+.buttonContainer {
+    text-align: right;
+    padding-top: 10px;
+}
+
+.content {
+    box-shadow: var(--content-box-shadow);
+    min-width: 320px;
+    max-width: 412px;
+    width: var(--content-box-width);
+    height: auto;
+    padding: 44px;
+    background-color: #fff;
+
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error {
+    color: #e81123;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+    width: 100%;
+    text-align: right;
+}
+
+footer a {
+    color: #000;
+    font-size: 12px;
+    line-height: 28px;
+    white-space: nowrap;
+    display: inline-block;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.formattedColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup {
+    margin: 16px 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1b1b1b;
+    margin: 10px 0;
+}
+
+.inputField {
+    margin-bottom: 10px;
+}
+
+input.login {
+    line-height: 1.25rem;
+    height: 36px;
+    padding-left: 0;
+    border-style: solid;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 1px;
+    border-color: rgba(0, 0, 0, 0.6);
+    outline: 0;
+    background: transparent;
+}
+
+input.login:hover {
+    border-color: rgba(0, 0, 0, 0.8);
+}
+
+input.login:focus {
+    background-color: transparent;
+    border-color: var(--ms-color);
+}
+
+input.text {
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    font-size: 15px;
+    height: 36px;
+    line-height: 20px;
+    max-width: 100%;
+    padding: 6px 10px;
+    outline: none;
+}
+
+input:disabled {
+    background-color: #ebebeb;
+    border: none;
+}
+
+.middle {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.optionBox {
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
+.optionBox:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+p {
+    margin: 10px 0;
+}
+
+.themePro {
+    color: var(--profinit-color);
+}
+
+
+@media (max-width: 600px),
+(max-height: 392px) {
+    #branding {
+        display: none;
+    }
+
+    .content {
+        margin-bottom: 28px;
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 220px;
+        max-width: 412px;
+        width: auto;
+        height: auto;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        border: 0px solid rgba(0, 0, 0, 0);
+    }
+
+    footer {
+        text-align: left;
+    }
+
+    footer a {
+        color: #747474;
+    }
+
+    input.text {
+        border-color: rgba(0, 0, 0, 0.8);
+        border-style: solid;
+        border-bottom-width: 1px;
+        border-left-width: 0px;
+        border-right-width: 0px;
+        border-top-width: 0px;
+        color: rgb(38, 38, 38);
+        font-weight: 400;
+        width: 350px;
+    }
+
+    input.text:focus {
+        outline: none;
+        border-color: rgb(0, 103, 184);
+    }
+
+    .middle {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        background-color: #fff;
+        padding: 23px 18px 0px 18px;
+    }
+
+    .optionBox {
+        border: 1px solid rgba(0, 0, 0, 0.4)
+    }
+}
