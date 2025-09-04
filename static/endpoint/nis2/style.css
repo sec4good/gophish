@@ -31,6 +31,14 @@ body {
   gap: 12px;
   padding: 0 16px;
 }
+
+.site-header {
+    text-align: center;
+    margin: 20px 0;
+    max-width: 200px;
+    height: auto;
+}
+
 .site-footer {
   justify-content: center;
   color: var(--muted);
