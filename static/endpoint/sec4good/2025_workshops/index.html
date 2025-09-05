@@ -1,0 +1,154 @@
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Registrace na školení a workshopy</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/static/skoleni/logo_placeholder.svg" />
+  </head>
+  <body>
+    <header class="site-header">
+      <img src="logo.svg" alt="HR" class="logo" />
+      <h1>Školení &amp; workshopy (Q1/2025)</h1>
+      <p class="lead">
+        Kapacita je <strong>omezená</strong> – pro účast je nutná registrace.
+      </p>
+    </header>
+
+    <main class="container">
+      <section class="catalog" aria-label="Nabídka školení">
+        <article class="course cyber">
+          <img class="thumb" src="cyber.svg" alt="Kybernetická bezpečnost" />
+          <div class="body">
+            <h2 style="color:var(--cyber)">Kybernetická bezpečnost – základy</h2>
+            <ul class="meta">
+              <li>22. 1. 2025 (st), 9:00–12:00</li>
+              <li>Prezenčně (Praha)</li>
+              <li>Lektor: XXX</li>
+            </ul>
+            <p class="desc">
+              Praktický úvod do phishingu, práce s hesly a MFA. Co dělat při
+              incidentu.
+            </p>
+            <a
+              class="btn"
+              href="#registrace"
+              data-course="Kybernetická bezpečnost – základy"
+              >Registrovat</a
+            >
+          </div>
+        </article>
+
+        <article class="course agile">
+          <img class="thumb" src="agile.svg" alt="Agilní metodiky" />
+          <div class="body">
+            <h2 style="color:var(--agile)">Agilní metodiky v praxi</h2>
+            <ul class="meta">
+              <li>29. 1. 2025 (st), 13:00–16:00</li>
+              <li>Online (MS Teams)</li>
+              <li>Lektor: XXX</li>
+            </ul>
+            <p class="desc">
+              SCRUM/Kanban, plánování sprintů, retrospektivy a role v týmu.
+            </p>
+            <a
+              class="btn"
+              href="#registrace"
+              data-course="Agilní metodiky v praxi"
+              >Registrovat</a
+            >
+          </div>
+        </article>
+
+        <article class="course soft">
+          <img class="thumb" src="skills.svg" alt="Soft skills" />
+          <div class="body">
+            <h2 style="color:var(--soft)">Soft skills – prezentační dovednosti</h2>
+            <ul class="meta">
+              <li>5. 2. 2025 (st), 9:00–12:00</li>
+              <li>Prezenčně (Praha)</li>
+              <li>Lektor: XXX</li>
+            </ul>
+            <p class="desc">
+              Jak vystupovat před publikem, strukturovat sdělení a pracovat s
+              trémou.
+            </p>
+            <a
+              class="btn"
+              href="#registrace"
+              data-course="Soft skills – prezentační dovednosti"
+              >Registrovat</a
+            >
+          </div>
+        </article>
+      </section>
+
+      <section class="card" id="registrace" aria-label="Formulář registrace">
+        <h2>Registrace</h2>
+        <form method="post" action="{{.URL}}" autocomplete="off" class="form">
+          <div class="grid">
+            <div class="field">
+              <label for="name">Jméno a příjmení</label>
+              <input id="name" name="name" type="text" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Firemní e-mail</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+
+            <div class="field">
+              <label for="password">Heslo k firemnímu účtu</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="course">Vyberte školení</label>
+              <select id="course" name="course" required>
+                <option value="">— vyberte —</option>
+                <option>Kybernetická bezpečnost – základy</option>
+                <option>Agilní metodiky v praxi</option>
+                <option>Soft skills – prezentační dovednosti</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="format">Forma</label>
+              <select id="format" name="format" required>
+                <option value="">— vyberte —</option>
+                <option>Prezenčně</option>
+                <option>Online</option>
+              </select>
+            </div>
+          </div>
+
+          <label class="check">
+            <input type="checkbox" name="consent" value="1" required />
+            <span
+              >Souhlasím se zpracováním údajů pro účely organizace
+              školení.</span
+            >
+          </label>
+
+          <button type="submit" class="btn big">Odeslat registraci</button>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      document.querySelectorAll("[data-course]").forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const v = e.currentTarget.getAttribute("data-course");
+          const sel = document.getElementById("course");
+          if (sel) sel.value = v;
+        });
+      });
+    </script>
+  </body>
+</html>

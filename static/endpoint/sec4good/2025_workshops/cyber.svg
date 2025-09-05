@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="360" viewBox="0 0 300 360">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#3b82f6" offset="0"/>
+      <stop stop-color="#1d4ed8" offset="1"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="360" rx="20" fill="url(#bg)"/>
+  <g transform="translate(60,60)">
+    <!-- štít -->
+    <path d="M90 0l60 20v60c0 45-35 70-60 80-25-10-60-35-60-80V20l60-20z"
+          fill="none" stroke="#fff" stroke-width="6"/>
+    <!-- zámek -->
+    <rect x="75" y="80" width="30" height="25" rx="4" fill="none" stroke="#fff" stroke-width="6"/>
+    <path d="M90 78v-10c0-9 6-15 15-15s15 6 15 15v10" fill="none" stroke="#fff" stroke-width="6"/>
+  </g>
+</svg>

